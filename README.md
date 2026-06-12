@@ -1,16 +1,16 @@
-# 🖥️ Mesa de Ayuda TI
+#  Mesa de Ayuda TI
 
 Sistema de gestión de tickets de soporte técnico construido con **Angular**, **Supabase** y **Odoo**.
 
 ---
 
-## 📋 Descripción
+##  Descripción
 
 Aplicación web para que empleados de una empresa reporten fallas técnicas, y los técnicos e supervisores puedan gestionar los tickets en tiempo real. El proyecto está pensado como práctica real de integración entre un frontend moderno, una base de datos reactiva y un ERP empresarial.
 
 ---
 
-## 🏗️ Arquitectura
+##  Arquitectura
 
 ```
 Usuario
@@ -28,7 +28,7 @@ Auth · PostgreSQL · Realtime    Helpdesk · Inventario · XML-RPC
 
 ---
 
-## 🚀 Tecnologías
+##  Tecnologías
 
 | Capa | Tecnología | Uso |
 |------|-----------|-----|
@@ -39,9 +39,9 @@ Auth · PostgreSQL · Realtime    Helpdesk · Inventario · XML-RPC
 
 ---
 
-## 📦 Módulos del proyecto
+##  Módulos del proyecto
 
-### Fase 1 — Base funcional ✅
+### Fase 1 — Base funcional 
 - Login con Supabase Auth (JWT)
 - Guards de autenticación por ruta
 - Crear ticket desde formulario Angular
@@ -58,7 +58,7 @@ Auth · PostgreSQL · Realtime    Helpdesk · Inventario · XML-RPC
 
 ---
 
-## 🗂️ Estructura del proyecto
+##  Estructura del proyecto
 
 ```
 src/app/
@@ -75,7 +75,7 @@ src/app/
 
 ---
 
-## ⚙️ Requisitos previos
+##  Requisitos previos
 
 Antes de ejecutar el proyecto necesitas tener instalado:
 
@@ -85,7 +85,7 @@ Antes de ejecutar el proyecto necesitas tener instalado:
 
 ---
 
-## 🛠️ Instalación y configuración
+##  Instalación y configuración
 
 ### 1. Clonar el repositorio
 
@@ -134,7 +134,7 @@ export const environment = {
 };
 ```
 
-> ⚠️ **Nunca subas este archivo con tus claves reales a GitHub.** Asegúrate de que `environment.ts` esté en el `.gitignore`.
+>  **Nunca subas este archivo con tus claves reales a GitHub.** Asegúrate de que `environment.ts` esté en el `.gitignore`.
 
 ### 5. Crear usuarios de prueba
 
@@ -155,7 +155,7 @@ Abre el navegador en `http://localhost:4200`
 
 ---
 
-## 🔐 Variables de entorno
+##  Variables de entorno
 
 | Variable | Descripción |
 |----------|-------------|
@@ -164,7 +164,7 @@ Abre el navegador en `http://localhost:4200`
 
 ---
 
-## 📸 Pantallas
+##  Pantallas
 
 | Pantalla | Ruta | Descripción |
 |----------|------|-------------|
@@ -174,7 +174,7 @@ Abre el navegador en `http://localhost:4200`
 
 ---
 
-## 🧠 Qué aprenderás con este proyecto
+##  Qué aprenderás con este proyecto
 
 **Angular**
 - Componentes standalone
@@ -196,7 +196,7 @@ Abre el navegador en `http://localhost:4200`
 
 ---
 
-## 🤝 Contribuir
+##  Contribuir
 
 Este proyecto es de práctica personal, pero si encuentras algo que mejorar:
 
