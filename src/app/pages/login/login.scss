@@ -1,0 +1,434 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+/* ===========================
+   VIDEO DE FONDO
+=========================== */
+
+.video-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* ===========================
+   CONTENEDOR LOGIN
+=========================== */
+
+.login-container {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+/* ===========================
+   TARJETA LOGIN
+=========================== */
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+
+  padding: 2rem;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+
+  box-shadow: 0 8px 32px rgba(255 162 0);
+
+  color: white;
+
+  animation: fadeIn 0.8s ease;
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+    
+  }
+
+  .subtitulo {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* ===========================
+   CAMPOS
+=========================== */
+
+.campo {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.8rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+
+    font-size: 1rem;
+
+    box-sizing: border-box;
+
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #6c63ff;
+      box-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
+    }
+  }
+}
+
+/* ===========================
+   MENSAJE DE ERROR
+=========================== */
+
+.error-msg {
+  background: rgba(255, 82, 82, 0.2);
+  color: #ffd5d5;
+
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255, 82, 82, 0.4);
+
+  text-align: center;
+}
+
+/* ===========================
+   BOTÓN LOGIN
+=========================== */
+
+.btn-login {
+  width: 100%;
+
+  padding: 0.9rem;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #6c63ff;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  margin-top: 0.5rem;
+
+  &:hover:not(:disabled) {
+    background: #5a52d5;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+}
+
+/* ===========================
+   LOADING DENTRO DEL BOTÓN
+=========================== */
+
+.loading-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+/* ===========================
+   OVERLAY DE CARGA
+=========================== */
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  p {
+    margin-top: 20px;
+    color: white;
+    font-weight: 600;
+  }
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid white;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+/* ===========================
+   ANIMACIONES
+=========================== */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.video-background::after {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  filter: blur(4px);
+  transform: scale(1.05);
+}
+.video-background video {
+  animation: slowZoom 25s linear infinite alternate;
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1.05);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
+}
+
+/* ===========================
+   BOTÓN UIVERSE
+=========================== */
+
+.animated-button {
+  position: relative;
+
+  width: 100%;
+  margin-top: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  padding: 16px 36px;
+
+  border: 4px solid transparent;
+
+  background: rgba(255, 187, 0, 0.367);
+
+  border-radius: 100px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #ffffff;
+
+  box-shadow: 0 0 0 2px #ffbb00;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 40px;
+  fill: #ffffff;
+
+  z-index: 9;
+
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 100px;
+  height: 20px;
+
+  background-color: #fcb90000;
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 10;
+
+  transform: translateX(-12px);
+
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  color: #ffffff;
+  box-shadow: 0 0 0 2px #15ff00;
+  border-radius: 12px;
+
+  box-shadow: 0 0 0 12px transparent;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #ffffff;
+}
+
+.animated-button:hover .circle {
+  width: 320px;
+  height: 320px;
+  opacity: 1;
+}
+
+.animated-button:active {
+  transform: scale(0.95);
+}
+
+.animated-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   SPINNER
+=========================== */
+
+.loading-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+
+  border: 3px solid rgba(255,255,255,.3);
+  border-top: 3px solid white;
+
+  border-radius: 50%;
+
+  animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

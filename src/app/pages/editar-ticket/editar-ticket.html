@@ -1,0 +1,63 @@
+<div class="form-container">
+
+  <h2>Editar Ticket</h2>
+
+  <div class="campo">
+    <label>Título *</label>
+
+    <input
+      type="text"
+      [(ngModel)]="ticket.titulo">
+  </div>
+
+  <div class="campo">
+    <label>Descripción</label>
+
+    <textarea
+      rows="4"
+      [(ngModel)]="ticket.descripcion">
+    </textarea>
+  </div>
+
+  <div class="campo">
+    <label>Prioridad</label>
+
+    <select
+      [(ngModel)]="ticket.prioridad">
+
+      <option>Baja</option>
+      <option>Media</option>
+      <option>Alta</option>
+
+    </select>
+  </div>
+
+  <div class="campo">
+    <label>Sede</label>
+
+    <input
+      type="text"
+      [(ngModel)]="ticket.sede">
+  </div>
+
+  <div class="acciones">
+
+    <button
+      class="btn-volver"
+      (click)="volver()">
+
+      Cancelar
+
+    </button>
+
+    <button
+      class="btn-guardar"
+      (click)="guardar()">
+
+      {{ cargando ? 'Guardando...' : 'Guardar cambios' }}
+
+    </button>
+
+  </div>
+
+</div>

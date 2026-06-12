@@ -1,0 +1,100 @@
+<!-- VIDEO DE FONDO -->
+<div class="video-background">
+  <video autoplay muted loop playsinline>
+    <source src="/0612.mp4" type="video/mp4" />
+    Tu navegador no soporta videos HTML5.
+  </video>
+</div>
+
+<!-- CONTENEDOR LOGIN -->
+<div class="login-container">
+
+  <div class="login-card">
+
+    <h1>GestTicket</h1>
+    <p class="subtitulo">
+      Inicia sesión para continuar
+    </p>
+
+    <!-- ERROR -->
+    <div class="error-msg" *ngIf="error">
+      {{ error }}
+    </div>
+
+    <!-- CORREO -->
+    <div class="campo">
+      <label>Correo</label>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        placeholder="juan@empresa.com"
+      />
+    </div>
+
+    <!-- CONTRASEÑA -->
+    <div class="campo">
+      <label>Contraseña</label>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        placeholder="••••••••"
+      />
+    </div>
+
+    <!-- BOTÓN LOGIN UIVERSE -->
+    <button
+      class="animated-button"
+      (click)="onLogin()"
+      [disabled]="cargando"
+    >
+
+      <!-- Flecha izquierda -->
+      <svg
+        viewBox="0 0 24 24"
+        class="arr-2"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+        />
+      </svg>
+
+      <!-- Texto -->
+      <span class="text">
+
+        <span *ngIf="!cargando">
+          Iniciar Sesión
+        </span>
+
+        <span *ngIf="cargando" class="loading-content">
+          <span class="spinner"></span>
+          Entrando...
+        </span>
+
+      </span>
+
+      <!-- Círculo animado -->
+      <span class="circle"></span>
+
+      <!-- Flecha derecha -->
+      <svg
+        viewBox="0 0 24 24"
+        class="arr-1"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+        />
+      </svg>
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- LOADING GLOBAL -->
+<div class="loading-overlay" *ngIf="cargando">
+  <div class="loader"></div>
+  <p>Iniciando sesión...</p>
+</div>

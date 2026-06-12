@@ -1,0 +1,154 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="logo">
+       TicketLand
+    </div>
+
+<nav>
+
+  <a class="active">
+    ⊞ Dashboard
+  </a>
+
+  <a>
+    ⌘ Tickets
+  </a>
+
+  <a>
+    ◫ Reportes
+  </a>
+
+  <a>
+    ⚙ Configuración
+  </a>
+
+</nav>
+
+    <button class="btn-logout" (click)="cerrarSesion()">
+       Cerrar sesión
+    </button>
+
+  </aside>
+
+  <!-- CONTENIDO -->
+  <main class="content">
+
+    <header class="header">
+
+      <h1>Dashboard</h1>
+
+      <div class="acciones">
+
+        <select [(ngModel)]="filtroPrioridad">
+          <option value="Todas">Prioridades</option>
+          <option value="Alta">Alta</option>
+          <option value="Media">Media</option>
+          <option value="Baja">Baja</option>
+        </select>
+
+        <select [(ngModel)]="filtroEstado">
+          <option value="Todos">Estados</option>
+          <option value="Abierto">Abiertos</option>
+          <option value="Cerrado">Cerrados</option>
+        </select>
+
+        <button
+          class="btn-crear"
+          (click)="irACrearTicket()">
+          + Nuevo Ticket
+        </button>
+
+      </div>
+
+    </header>
+
+    <!-- ESTADÍSTICAS -->
+
+    <section class="stats">
+
+      <div class="stat-card">
+        <h2>{{ ticketsAbiertos }}</h2>
+        <p>Abiertos</p>
+      </div>
+
+      <div class="stat-card">
+        <h2>{{ ticketsCerrados }}</h2>
+        <p>Cerrados</p>
+      </div>
+
+      <div class="stat-card">
+        <h2>{{ tickets.length }}</h2>
+        <p>Total</p>
+      </div>
+
+    </section>
+
+    <!-- TICKETS -->
+
+    <section class="tickets-grid">
+
+      <div
+        class="ticket-card"
+        *ngFor="let ticket of ticketsFiltrados">
+
+        <div class="ticket-header">
+
+          <span class="ticket-id">
+            #{{ ticket.id }}
+          </span>
+
+          <span
+            class="badge"
+            [class.cerrado]="ticket.estado === 'Cerrado'">
+
+            {{ ticket.estado }}
+
+          </span>
+
+        </div>
+
+        <h3>
+          {{ ticket.titulo }}
+        </h3>
+
+        <p>
+          {{ ticket.descripcion }}
+        </p>
+
+        <div class="ticket-footer">
+
+          <span>
+            📍 {{ ticket.sede }}
+          </span>
+
+          <span
+            class="prioridad"
+            [ngClass]="{
+              'alta': ticket.prioridad === 'Alta',
+              'media': ticket.prioridad === 'Media',
+              'baja': ticket.prioridad === 'Baja'
+            }">
+
+            {{ ticket.prioridad }}
+
+          </span>
+
+        </div>
+
+        <button
+          class="btn-estado"
+          (click)="cambiarEstado(ticket)">
+          Cambiar Estado
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>

@@ -1,0 +1,56 @@
+
+<div class="crear-container">
+  <div class="form-card">
+    <div class="form-header">
+  <button class="btn-volver" (click)="volver()">
+    ← Volver
+  </button>
+
+  <h2 class="title-h2">Nuevo ticket</h2>
+</div>
+
+    <div class="campo">
+      <label>Título *</label>
+      <input 
+        type="text" 
+        [(ngModel)]="ticket.titulo" 
+        placeholder="Ej: No funciona la impresora"
+      />
+    </div>
+
+    <div class="campo">
+      <label>Descripción</label>
+      <textarea 
+        [(ngModel)]="ticket.descripcion"
+        placeholder="Describe el problema con más detalle..."
+        rows="4"
+      ></textarea>
+    </div>
+
+    <div class="campo">
+      <label>Prioridad</label>
+      <select [(ngModel)]="ticket.prioridad">
+        <option>Baja</option>
+        <option>Media</option>
+        <option>Alta</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label>Sede *</label>
+      <input 
+        type="text" 
+        [(ngModel)]="ticket.sede" 
+        placeholder="Ej: Sede Norte"
+      />
+    </div>
+
+    <button 
+      class="btn-crear" 
+      (click)="onCrear()" 
+      [disabled]="cargando"
+    >
+      {{ cargando ? 'Creando...' : 'Crear ticket' }}
+    </button>
+  </div>
+</div>
